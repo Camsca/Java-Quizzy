@@ -39,3 +39,15 @@ nav a[href="#view-high-scores"] {
  #timer {
     color: black;
 }
+ /*header style*/
+ .header-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+
+ }
+ 
