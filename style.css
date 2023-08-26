@@ -50,7 +50,7 @@ nav a[href="#view-high-scores"] {
     background-color: #ffffff;
 
  }
- 
+
 .header-container h1,
  .header-container p,
  #start-button {
@@ -74,11 +74,11 @@ nav a[href="#view-high-scores"] {
  #start-button{
     background-color:#351c75;
     color: white;
-    padding: 10px 20px;
+    padding: 16px 35px;
     border: none;
-    border-radius: 5px;
+    border-radius: 14px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 19px;
  }
 
  #start-button:hover{
