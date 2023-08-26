@@ -50,6 +50,26 @@ nav a[href="#view-high-scores"] {
     background-color: #ffffff;
 
  }
+ 
+.header-container h1,
+ .header-container p,
+ #start-button {
+     padding: 10px; 
+     margin: 10px;
+
+ }
+ .header-container h1{
+    font-size: 50px;
+ }
+
+
+ .header-container p{
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 57%;
+    color: #3d3a3d;
+ }
 
  #start-button{
     background-color:#351c75;
