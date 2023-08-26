@@ -11,10 +11,14 @@
 
 body{
     background-color:#ffffff;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 /* nav section*/
 nav{
+    margin: 15px;
+    padding: 12px;
+    font-size: 21px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,7 +32,9 @@ nav a[href="#view-high-scores"] {
     color: #b54ae5;
     text-decoration: none;
  }
- 
+ nav a[href="#view-high-scores"]:hover {
+    color:#9879e6;
+}
  
  #timer {
     color: black;
