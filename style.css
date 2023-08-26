@@ -33,7 +33,7 @@ nav a[href="#view-high-scores"] {
     text-decoration: none;
  }
  nav a[href="#view-high-scores"]:hover {
-    color:#9879e6;
+    color:#Fd009c;
 }
  
  #timer {
@@ -50,4 +50,17 @@ nav a[href="#view-high-scores"] {
     background-color: #ffffff;
 
  }
- 
+
+ #start-button{
+    background-color:#351c75;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+ }
+
+ #start-button:hover{
+    background-color:#6633a5;
+ }
