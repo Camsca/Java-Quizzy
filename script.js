@@ -12,3 +12,13 @@ const viewHighScoresSection = document.getElementById("view-high-scores");
 const goBackButton = document.getElementById("go-back-button");
 const clearScoresButton = document.getElementById("clear-scores-button");
 const resultsSection = document.getElementById("results");
+
+let currentQuestionIndex=0;
+let time=90;
+
+startButton.addEventListener("click",function(){
+    headerContainer.style.display = "none";
+    quizContainer.style.display= "block";
+displayQuestions(currentQuestionIndex);
+startTimer();
+});//agregando el bton para empezar las pregumtas y el timer//
