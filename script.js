@@ -14,14 +14,28 @@ const clearScoresButton = document.getElementById("clear-scores-button");
 const resultsSection = document.getElementById("results");
 
 let currentQuestionIndex=0;
-let time=90;
+
 
 startButton.addEventListener("click",function(){
     headerContainer.style.display = "none";
     quizContainer.style.display= "block";
-displayQuestions(currentQuestionIndex);
-startTimer();
+    displayQuestions(currentQuestionIndex);
+    startTimer();
 });//agregando el bton para empezar las pregumtas y el timer//
+let time =90;
+function checkAnswer(selectedIndex, correctIndex){
+   if (selectedIndex=== correctIndex){
+       currentQuestionIndex++;
+       if (currentQuestionIndex<questions.length){
+           displayQuestions(currentQuestionIndex);
+   
+       }else{
+           endQuiz();
+       }
+    } else{
+           time-=10;
+       }
+   }
 
 const questions = [
 {    
@@ -125,25 +139,21 @@ correctIndex: 2
 }
 ];
 
-//funcion to show questions/
+
+//display questions/
 function displayQuestions(index) {
     const question= questions[index];
-    console.log("showaa:", question.question);
+    
     questionsContainer.textContent=question.question;
     optionsContainer.innerHTML= "";
  for (let optionIndex=0; optionIndex< question.options.length; optionIndex++){
 const button= document.createElement("button");
 button.textContent= question.options[optionIndex];
 button.classList.add("option");
-
-button.addEventListener("click", function(){
-    console.log("Opción seleccionada:", optionIndex);
-    checkAnswer(optionIndex, question.correctIndex);
-});
-
 optionsContainer.appendChild(button);
 }
 }
+
 
 
 
