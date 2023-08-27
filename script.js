@@ -1,8 +1,14 @@
 const startButton = document.getElementById("start-button");
 const headerContainer = document.querySelector(".header-container");
 const quizContainer = document.getElementById("quiz-container");
-
-startButton.addEventListener("click",function() {
-    headerContainer.style.display = "none"; // Ocultar el encabezado
-    quizContainer.style.display = "block"; // Mostrar la sección del cuestionario
-});
+const questionsContainer = document.getElementById("questions");
+const optionsContainer = document.getElementById("options");
+const timerValue = document.getElementById("timer-value");
+const allDoneSection = document.getElementById("all-done");
+const finalScore = document.getElementById("Final-score");
+const initialsForm = document.getElementById("initials-form");
+const nameInput = document.getElementById("name");
+const viewHighScoresSection = document.getElementById("view-high-scores");
+const goBackButton = document.getElementById("go-back-button");
+const clearScoresButton = document.getElementById("clear-scores-button");
+const resultsSection = document.getElementById("results");
