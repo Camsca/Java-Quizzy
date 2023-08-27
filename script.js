@@ -22,3 +22,131 @@ startButton.addEventListener("click",function(){
 displayQuestions(currentQuestionIndex);
 startTimer();
 });//agregando el bton para empezar las pregumtas y el timer//
+
+const questions = [
+{    
+question: "What is the concept of hoisting' in JavaScript?",
+ options: [
+"a) Moving variables to a different scope",
+"b)Rearranging code for better performance ", 
+"c)Automatically lifting heavy operations ", 
+"d)Variables and function declarations are moved to the top of their scope "
+],
+ correctIndex: 3
+},
+ {
+question: "Which keyword is used to declare a variable in JavaScript?",
+options: [
+"a) var",
+"b) let", 
+"c) const", 
+"d) both b) and c)"
+],
+correctIndex: 3
+},
+{
+question: "What does the '===' operator check in JavaScript?",
+options: [
+ "a) Equality of values",
+ "b) Equality of values and types",
+ "c) Inequality of values",
+ "d) Inequality of values and types"
+],
+correctIndex: 1
+},
+ {
+question: "Which function is used to print a value to the console?",
+options: [
+"a) console.print()",
+ "b) log()", 
+ "c) print()", 
+ "d) console.log()"
+],
+correctIndex: 3
+},
+{
+ question: "What is the scope of a variable declared with 'var'?",
+options: [
+ "a) Local scope",
+"b) Global scope",
+"c) Function scope", 
+ "d) Block scope"
+],
+correctIndex: 2
+},
+{
+question: "What is the correct way to write a comment in JavaScript?",
+ options: [
+"a) <!-- This is a comment -->",
+"c) /* This is a comment */",
+"d) ** This is a comment **"
+],
+correctIndex: 1
+ },
+{
+question: "What does the 'typeof' operator return?",
+options: [
+"a) The data type of a variable",
+"b) The value of a variable",
+"c) The variable name",
+"d) An error"
+],
+correctIndex: 0
+ },
+ {
+question: "Which of the following is NOT a primitive data type in JavaScript?",
+options: [
+"a) String",
+"b) Number",
+"c) Boolean",
+"d) Array"
+],
+correctIndex: 3
+},
+{
+question: "What is the purpose of the 'return' statement in a function?",
+options: [
+"a) It defines a new variable",
+"b) It exits the function and specifies a value to be returned to the caller",
+"c) It prints a message to the console",
+"d) It declares a loop"
+],
+correctIndex: 1
+ },
+{
+ question: "What is the purpose of the 'typeof' operator in JavaScript?",
+ options: [
+ "a) To check if a variable is defined",
+ "b) To convert a value to a string",
+ "c) To determine the data type of a value",
+ "d) To compare two values for equality"
+],
+correctIndex: 2
+}
+];
+
+//funcion to show questions/
+function displayQuestions(index) {
+    const question= questions[index];
+    console.log("showaa:", question.question);
+    questionsContainer.textContent=question.question;
+    optionsContainer.innerHTML= "";
+ for (let optionIndex=0; optionIndex< question.options.length; optionIndex++){
+const button= document.createElement("button");
+button.textContent= question.options[optionIndex];
+button.classList.add("option");
+
+button.addEventListener("click", function(){
+    console.log("Opción seleccionada:", optionIndex);
+    checkAnswer(optionIndex, question.correctIndex);
+});
+
+optionsContainer.appendChild(button);
+}
+}
+
+
+
+
+
+
