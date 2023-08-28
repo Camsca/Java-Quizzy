@@ -39,6 +39,7 @@ function handleWrongAnswer() {
 }
 function endQuiz() {
   quizContainer.style.display = "none";
+  showResults();
 }
 
 const questions = [
@@ -179,3 +180,7 @@ function checkAnswer(selectedIndex, correctIndex) {
     }
   }
 }
+
+function showResults() {}
+  
+  
