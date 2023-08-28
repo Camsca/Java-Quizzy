@@ -181,6 +181,19 @@ function checkAnswer(selectedIndex, correctIndex) {
   }
 }
 
-function showResults() {}
+function showResults() {
+quizContainer.style.display = "none";
+allDoneSection.style.display = "block";
+  finalScore.textContent = points; // Mostrar el puntaje final
+
+initialsForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const name = nameInput.value;
+
+});
+
+}
+
   
+
   
