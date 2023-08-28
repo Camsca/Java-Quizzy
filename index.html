@@ -34,7 +34,7 @@
 <section id="all-done" style="display: none;">
 <h2>All done!</h2>
 <p> Your final score is:<span id="Final-score"></span></p>
-<form id="initials-form">
+<form id="initials-form" action="#">
     <label for="name">Enter your Name:</label>
     <input type="text" id="name" >
     <button type="submit">submit</button>
@@ -42,9 +42,8 @@
 </section>
 <section id="view-high-scores" style="display: none;">
     <h2>High Scores</h2>
-   <!--agregar este cuadro o link aun no se -->
-
-    <button id="go-back-button">Go Back</button>
+   <ul id="high-scores-list"></ul>
+  <button id="go-back-button">Go Back</button>
     <button id="clear-scores-button">Clear HighScores</button>
 </section>
 

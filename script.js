@@ -191,8 +191,9 @@ initialsForm.addEventListener("submit", function(event) {
   const name = nameInput.value;
 
 });
-
 }
+
+
 
   
 
