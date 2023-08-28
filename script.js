@@ -13,7 +13,7 @@ const goBackButton = document.getElementById("go-back-button");
 const clearScoresButton = document.getElementById("clear-scores-button");
 const resultsSection = document.getElementById("results");
 
-let time =90;
+let time =70;
 let currentQuestionIndex=0;
 startButton.addEventListener("click", function() {
     headerContainer.style.display = "none";
@@ -148,18 +148,26 @@ correctIndex: 2
 
 //display questions/
 function displayQuestions(index) {
-    const question= questions[index];
+    const question = questions[index];
     
-    questionsContainer.textContent=question.question;
-    optionsContainer.innerHTML= "";
-  for (let optionIndex=0; optionIndex< question.options.length; optionIndex++){
-        const button= document.createElement("button");
-        button.textContent= question.options[optionIndex];
+    questionsContainer.textContent = question.question;
+    optionsContainer.innerHTML = "";
+    
+  for (let optionIndex = 0; optionIndex < question.options.length; optionIndex++) {
+        const button = document.createElement("button");
+        button.textContent = question.options[optionIndex];
         button.classList.add("option");
         optionsContainer.appendChild(button);
- }
-    }
 
+        button.addEventListener("click", function() {
+            checkAnswer(optionIndex, question.correctIndex);
+        });
+    }
+} 
+function checkAnswer(selectedIndex, correctIndex) {
+    if (selectedIndex === correctIndex) {
+        currentQuestionIndex++;
+     
 
 
 
