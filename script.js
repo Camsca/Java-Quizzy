@@ -13,29 +13,35 @@ const goBackButton = document.getElementById("go-back-button");
 const clearScoresButton = document.getElementById("clear-scores-button");
 const resultsSection = document.getElementById("results");
 
+let time =90;
 let currentQuestionIndex=0;
-
-
-startButton.addEventListener("click",function(){
+startButton.addEventListener("click", function() {
     headerContainer.style.display = "none";
-    quizContainer.style.display= "block";
+    quizContainer.style.display = "block";
     displayQuestions(currentQuestionIndex);
     startTimer();
-});//agregando el bton para empezar las pregumtas y el timer//
-let time =90;
-function checkAnswer(selectedIndex, correctIndex){
-   if (selectedIndex=== correctIndex){
-       currentQuestionIndex++;
-       if (currentQuestionIndex<questions.length){
-           displayQuestions(currentQuestionIndex);
-   
-       }else{
-           endQuiz();
-       }
-    } else{
-           time-=10;
-       }
-   }
+});
+function startTimer() {//SET TIMER 
+    timerValue.textContent = time;
+    timerInterval = setInterval(function() {
+        time--;
+        timerValue.textContent = time;
+        
+        if (time <= 0) {
+            clearInterval(timerInterval);
+            endQuiz();
+        }
+    }, 1000);
+}
+function handleWrongAnswer() {
+    time -= 10;
+}
+function endQuiz() {
+    quizContainer.style.display = "none";
+     
+}
+
+
 
 const questions = [
 {    
@@ -146,13 +152,14 @@ function displayQuestions(index) {
     
     questionsContainer.textContent=question.question;
     optionsContainer.innerHTML= "";
- for (let optionIndex=0; optionIndex< question.options.length; optionIndex++){
-const button= document.createElement("button");
-button.textContent= question.options[optionIndex];
-button.classList.add("option");
-optionsContainer.appendChild(button);
-}
-}
+  for (let optionIndex=0; optionIndex< question.options.length; optionIndex++){
+        const button= document.createElement("button");
+        button.textContent= question.options[optionIndex];
+        button.classList.add("option");
+        optionsContainer.appendChild(button);
+ }
+    }
+
 
 
 
