@@ -13,6 +13,7 @@ const goBackButton = document.getElementById("go-back-button");
 const clearScoresButton = document.getElementById("clear-scores-button");
 const resultsSection = document.getElementById("results");
 
+
 let time = 70;
 let currentQuestionIndex = 0;
 startButton.addEventListener("click", function () {
@@ -193,6 +194,11 @@ initialsForm.addEventListener("submit", function(event) {
 });
 }
 
+//submit and 
+initialsForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  
 
 
   
