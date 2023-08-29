@@ -198,8 +198,8 @@ initialsForm.addEventListener("submit", function(event) {
 initialsForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  
-
+  const name = nameInput.value;
+  const totalScore = points;
 
   
 
