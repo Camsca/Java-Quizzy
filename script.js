@@ -212,3 +212,4 @@ if (highScores === null) {
 } else {
   highScores = JSON.parse(highScores);
 }
+highScores.push(scoreObject);
