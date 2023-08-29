@@ -200,7 +200,7 @@ initialsForm.addEventListener("submit", function(event) {
 
   const name = nameInput.value;
   const totalScore = points;
-
-  
-
-  
+  const scoreObject = {
+    name: name,
+    score: totalScore
+  };
