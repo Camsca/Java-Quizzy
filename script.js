@@ -194,7 +194,7 @@ initialsForm.addEventListener("submit", function(event) {
 });
 }
 
-//submit and 
+//submit and scoreobjet
 initialsForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
@@ -204,3 +204,5 @@ initialsForm.addEventListener("submit", function(event) {
     name: name,
     score: totalScore
   };
+
+let highScores=localStorage.getItem("highScores");
