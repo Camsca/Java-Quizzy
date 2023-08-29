@@ -215,3 +215,5 @@ if (highScores === null) {
 highScores.push(scoreObject);
 
 const updatedHighScores = JSON.stringify(highScores);
+
+localStorage.setItem("highScores", updatedHighScores);
