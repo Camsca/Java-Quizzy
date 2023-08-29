@@ -213,3 +213,5 @@ if (highScores === null) {
   highScores = JSON.parse(highScores);
 }
 highScores.push(scoreObject);
+
+const updatedHighScores = JSON.stringify(highScores);
