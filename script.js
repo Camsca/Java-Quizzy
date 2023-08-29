@@ -206,3 +206,9 @@ initialsForm.addEventListener("submit", function(event) {
   };
 
 let highScores=localStorage.getItem("highScores");
+
+if (highScores === null) {
+  highScores = [];
+} else {
+  highScores = JSON.parse(highScores);
+}
