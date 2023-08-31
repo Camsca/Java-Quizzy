@@ -248,6 +248,24 @@ goBackButton.addEventListener("click", function () {
 
 });
 }
+// Event listener for "Go Back" button
+goBackButton.addEventListener("click", function () {
+  headerContainer.style.display = "block";
+  quizContainer.style.display = "none";
+  allDoneSection.style.display = "none";
+  resultsSection.style.display = "none";
+  viewHighScoresSection.style.display = "none";
+  
+  // Reset game state
+  currentQuestionIndex = 0;
+  points = 0;
+  time = 60;
+  
+
+ 
+  
+}); 
+
  
 
 
