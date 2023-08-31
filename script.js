@@ -221,3 +221,12 @@ localStorage.setItem("highScores", updatedHighScores);
  allDoneSection.style.display="none";
  viewHighScoresSection.style.display="block";
 });
+
+goBackButton.addEventListener("click", function () {
+  headerContainer.style.display = "block";
+  quizContainer.style.display = "none";
+  allDoneSection.style.display = "none";
+  resultsSection.style.display = "none";
+  viewHighScoresSection.style.display = "none";
+});
+
