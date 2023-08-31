@@ -238,6 +238,9 @@ goBackButton.addEventListener("click", function () {
 
  function updatedHighScores(){
   highScoresList.innerHTML="";
+  const storedHighScores = localStorage.getItem("highScores");
+  const highScores = storedHighScores ? JSON.parse(storedHighScores):[];
+   
 
  }
  
