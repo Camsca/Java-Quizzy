@@ -240,7 +240,7 @@ goBackButton.addEventListener("click", function () {
   highScoresList.innerHTML="";
   const storedHighScores = localStorage.getItem("highScores");
   const highScores = storedHighScores ? JSON.parse(storedHighScores):[];
-   
+   highScores.sort((a,b)=> b.score- a.score);
 
  }
  
