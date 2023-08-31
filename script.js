@@ -23,13 +23,20 @@ let currentQuestionIndex = 0;
 let points=0; 
 
 
+// Event listeners
+startButton.addEventListener("click", startQuiz);
+initialsForm.addEventListener("submit", submitScore);
+goBackButton.addEventListener("click", goBack);
+clearScoresButton.addEventListener("click", clearScores);
+viewHighScoresLink.addEventListener('click', showHighScoresSection)
 
-startButton.addEventListener("click", function () {
+//Funtions
+function startQuiz() {
   headerContainer.style.display = "none";
   quizContainer.style.display = "block";
   displayQuestions(currentQuestionIndex);
   startTimer();
-});
+}
 function startTimer() {
   //SET TIMER
   timerValue.textContent = time;
