@@ -241,8 +241,13 @@ goBackButton.addEventListener("click", function () {
   const storedHighScores = localStorage.getItem("highScores");
   const highScores = storedHighScores ? JSON.parse(storedHighScores):[];
    highScores.sort((a,b)=> b.score- a.score);
+   highScores.forEach((scoreObject, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = (index + 1) + " " + scoreObject.name + ": " + scoreObject.score;
+ highScoresList.appendChild(listItem);
 
- }
+});
+}
  
 
 
