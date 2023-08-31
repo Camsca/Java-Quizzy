@@ -21,7 +21,7 @@ const correctFeedback = document.getElementById("Correct");
 let time = 60;
 let currentQuestionIndex = 0;
 let points=0; 
-
+let timerInterval;
 
 // Event listeners
 startButton.addEventListener("click", startQuiz);
@@ -49,7 +49,7 @@ function startTimer() {
     }
   }, 1000);
 }
-//display questions/
+
 function displayQuestions(index) {
   const question = questions[index];
   
@@ -71,81 +71,61 @@ function displayQuestions(index) {
       });
     }
   }
-//* funtion to rest 10 seg if wrong /
-//function handleWrongAnswer() {
-  //time -= 10;
-  //}
-   function checkAnswer(selectedIndex, correctIndex) {
+  function checkAnswer(selectedIndex, correctIndex) {
+    console.log("Selected index:", selectedIndex);
+    console.log("Correct index:", correctIndex);
+    correctFeedback.style.display = 'none'; 
+    wrongFeedback.style.display = 'none';   
     if (selectedIndex === correctIndex) {
-      points +=2;
-      currentQuestionIndex++;
-      if (currentQuestionIndex < questions.length) {
-        displayQuestions(currentQuestionIndex);
-      } else {
-        endQuiz();
-      }
+      points += 2;
       correctFeedback.style.display = 'block';
-      wrongFeedback.style.display = 'none'; // correct
+      console.log("Correct answer! Points:", points);
+      setTimeout(() => {
+        correctFeedback.style.display = 'none'; 
+        moveToNextQuestion();
+      }, 1000);
     } else {
       time -= 15;
-      if (time < 0) {
+      wrongFeedback.style.display = 'block'; 
+      console.log("Wrong answer! Time:", time);
+   if (time < 0) {
         time = 0;
       }
-      if (currentQuestionIndex < questions.length) {
-        displayQuestions(currentQuestionIndex);
-      } else {
-        endQuiz();
-      }
-      wrongFeedback.style.display = 'block';
-      correctFeedback.style.display = 'none';// wrong
+      setTimeout(() => {
+        wrongFeedback.style.display = 'none'; 
+        moveToNextQuestion();
+      }, 1000);
     }
   }
+ 
   
   function endQuiz() {
    // quizContainer.style.display = "none";
     //showResults();
   }
-  //*Show  final score/
+  
   function showResults() {
     quizContainer.style.display = "none";
     allDoneSection.style.display = "block";
     finalScore.textContent = points; // Mostrar el puntaje final
   }
    
-  initialsForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-      const name = nameInput.value;
-      
-    });
+  function submitScore(event) {
+    event.preventDefault();
+    const name = nameInput.value;
+    const scoreObject = { name, score: points };
+  
+    let highScores = localStorage.getItem("highScores");
+    highScores = highScores ? JSON.parse(highScores) : [];
+    highScores.push(scoreObject);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  
+    updatedHighScoresList();
+    allDoneSection.style.display = "none";
+    viewHighScoresSection.style.display = "block";
   }
   
-  //submit and scoreobjet
-  initialsForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    console.log("Form submitted!");
-    const name = nameInput.value;
-    const totalScore = points;
-    const scoreObject = {
-      name: name,
-      score: totalScore
-    };
-    
-    let highScores=localStorage.getItem("highScores");
-    
-    if (highScores === null) {
-      highScores = [];
-    } else {
-      highScores = JSON.parse(highScores);
-    }
-    highScores.push(scoreObject);
-    
-    const updatedHighScores = JSON.stringify(highScores);
-    
-    localStorage.setItem("highScores", updatedHighScores);
-    updatedHighScores();
-    allDoneSection.style.display="none";
-    viewHighScoresSection.style.display="block";
-  });
+ 
 
   function updatedHighScores(){
     highScoresList.innerHTML="";
@@ -159,7 +139,7 @@ function displayQuestions(index) {
       
     });
   }
-  //*  go back button and start new game//
+  
  function goBack() {
     headerContainer.style.display = "block";
     quizContainer.style.display = "none";
@@ -171,7 +151,7 @@ function displayQuestions(index) {
     points = 0;
     time = 60;
   }
-  //*event for Clear highScores button */
+ 
 function clearScores(){
     localStorage.removeItem("highScores");
     updatedHighScores();
