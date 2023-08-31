@@ -221,7 +221,7 @@ localStorage.setItem("highScores", updatedHighScores);
  allDoneSection.style.display="none";
  viewHighScoresSection.style.display="block";
 });
-
+//* event go back button //
 goBackButton.addEventListener("click", function () {
   headerContainer.style.display = "block";
   quizContainer.style.display = "none";
@@ -229,4 +229,7 @@ goBackButton.addEventListener("click", function () {
   resultsSection.style.display = "none";
   viewHighScoresSection.style.display = "none";
 });
+ //*event for Clear highScores button */
+ clearScoresButton.addEventListener("click",function(){})
+
 
