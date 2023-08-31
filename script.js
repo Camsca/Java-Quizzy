@@ -12,9 +12,9 @@ const viewHighScoresSection = document.getElementById("view-high-scores");
 const goBackButton = document.getElementById("go-back-button");
 const clearScoresButton = document.getElementById("clear-scores-button");
 const resultsSection = document.getElementById("results");
+const highScoresList = document.getElementById("high-scores-list");
 
-
-let time = 70;
+let time = 60;
 let currentQuestionIndex = 0;
 startButton.addEventListener("click", function () {
   headerContainer.style.display = "none";
@@ -197,7 +197,7 @@ initialsForm.addEventListener("submit", function(event) {
 //submit and scoreobjet
 initialsForm.addEventListener("submit", function(event) {
   event.preventDefault();
-
+  console.log("Form submitted!");
   const name = nameInput.value;
   const totalScore = points;
   const scoreObject = {
@@ -217,3 +217,5 @@ highScores.push(scoreObject);
 const updatedHighScores = JSON.stringify(highScores);
 
 localStorage.setItem("highScores", updatedHighScores);
+ updatedHighScores();//*hacer funcion/
+ allDoneSection.style.display="none";
