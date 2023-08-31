@@ -35,6 +35,7 @@ function startTimer() {
     }
   }, 1000);
 }
+//* funtion to rest 10 seg if wrong /
 function handleWrongAnswer() {
   time -= 10;
 }
@@ -42,7 +43,7 @@ function endQuiz() {
   quizContainer.style.display = "none";
   showResults();
 }
-
+//questions /
 const questions = [
   {
     question: "What is the concept of hoisting' in JavaScript?",
@@ -159,7 +160,7 @@ function displayQuestions(index) {
   }
 }
 let points=0; 
-
+//function to check answers
 function checkAnswer(selectedIndex, correctIndex) {
   if (selectedIndex === correctIndex) {
     points +=2;
@@ -181,7 +182,7 @@ function checkAnswer(selectedIndex, correctIndex) {
     }
   }
 }
-
+//*Show  final score/
 function showResults() {
 quizContainer.style.display = "none";
 allDoneSection.style.display = "block";
@@ -217,7 +218,7 @@ highScores.push(scoreObject);
 const updatedHighScores = JSON.stringify(highScores);
 
 localStorage.setItem("highScores", updatedHighScores);
- updatedHighScores();//*hacer funcion/
+ updatedHighScores();
  allDoneSection.style.display="none";
  viewHighScoresSection.style.display="block";
 });
@@ -233,6 +234,12 @@ goBackButton.addEventListener("click", function () {
  clearScoresButton.addEventListener("click",function(){
   localStorage.removeItem("highScores");
   updatedHighScores();
- })
+ });
+
+ function updatedHighScores(){
+  highScoresList.innerHTML="";
+
+ }
+ 
 
 
