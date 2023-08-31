@@ -13,6 +13,8 @@ const goBackButton = document.getElementById("go-back-button");
 const clearScoresButton = document.getElementById("clear-scores-button");
 const resultsSection = document.getElementById("results");
 const highScoresList = document.getElementById("high-scores-list");
+const wrongFeedback = document.getElementById("Wrong");
+const correctFeedback = document.getElementById("Correct");
 
 let time = 60;
 let currentQuestionIndex = 0;
@@ -170,6 +172,8 @@ function checkAnswer(selectedIndex, correctIndex) {
     } else {
       endQuiz();
     }
+    correctFeedback.style.display = 'block';
+    wrongFeedback.style.display = 'none'; // correct
   } else {
     time -= 15;
     if (time < 0) {
@@ -180,8 +184,11 @@ function checkAnswer(selectedIndex, correctIndex) {
     } else {
       endQuiz();
     }
+    wrongFeedback.style.display = 'block';
+    correctFeedback.style.display = 'none';// wrong
   }
 }
+
 //*Show  final score/
 function showResults() {
 quizContainer.style.display = "none";
