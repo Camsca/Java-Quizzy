@@ -38,7 +38,6 @@ function startQuiz() {
   startTimer();
 }
 function startTimer() {
-  //SET TIMER
   timerValue.textContent = time;
   timerInterval = setInterval(function () {
     time--;
@@ -50,15 +49,6 @@ function startTimer() {
     }
   }, 1000);
 }
-//* funtion to rest 10 seg if wrong /
-function handleWrongAnswer() {
-  time -= 10;
-}
-function endQuiz() {
-  quizContainer.style.display = "none";
-  showResults();
-}
-
 //display questions/
 function displayQuestions(index) {
   const question = questions[index];
@@ -81,8 +71,11 @@ function displayQuestions(index) {
       });
     }
   }
-  //function to check answers
-  function checkAnswer(selectedIndex, correctIndex) {
+//* funtion to rest 10 seg if wrong /
+//function handleWrongAnswer() {
+  //time -= 10;
+  //}
+   function checkAnswer(selectedIndex, correctIndex) {
     if (selectedIndex === correctIndex) {
       points +=2;
       currentQuestionIndex++;
@@ -108,13 +101,18 @@ function displayQuestions(index) {
     }
   }
   
+  function endQuiz() {
+   // quizContainer.style.display = "none";
+    //showResults();
+  }
   //*Show  final score/
   function showResults() {
     quizContainer.style.display = "none";
     allDoneSection.style.display = "block";
     finalScore.textContent = points; // Mostrar el puntaje final
-    
-    initialsForm.addEventListener("submit", function(event) {
+  }
+   
+  initialsForm.addEventListener("submit", function(event) {
       event.preventDefault();
       const name = nameInput.value;
       
@@ -148,20 +146,7 @@ function displayQuestions(index) {
     allDoneSection.style.display="none";
     viewHighScoresSection.style.display="block";
   });
-  //* event go back button //
-  goBackButton.addEventListener("click", function () {
-    headerContainer.style.display = "block";
-    quizContainer.style.display = "none";
-    allDoneSection.style.display = "none";
-    resultsSection.style.display = "none";
-    viewHighScoresSection.style.display = "none";
-  });
-  //*event for Clear highScores button */
-  clearScoresButton.addEventListener("click",function(){
-    localStorage.removeItem("highScores");
-    updatedHighScores();
-  });
-  
+
   function updatedHighScores(){
     highScoresList.innerHTML="";
     const storedHighScores = localStorage.getItem("highScores");
@@ -174,23 +159,25 @@ function displayQuestions(index) {
       
     });
   }
-  // Event listener for "Go Back" button
-  goBackButton.addEventListener("click", function () {
+  //*  go back button and start new game//
+ function goBack() {
     headerContainer.style.display = "block";
     quizContainer.style.display = "none";
     allDoneSection.style.display = "none";
     resultsSection.style.display = "none";
     viewHighScoresSection.style.display = "none";
     
-    // Reset game state
     currentQuestionIndex = 0;
     points = 0;
     time = 60;
-    
-    
-    
-    
-  }); 
+  }
+  //*event for Clear highScores button */
+function clearScores(){
+    localStorage.removeItem("highScores");
+    updatedHighScores();
+  }
+  
+ 
   
   //questions /
   const questions = [
