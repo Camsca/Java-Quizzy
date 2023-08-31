@@ -230,6 +230,9 @@ goBackButton.addEventListener("click", function () {
   viewHighScoresSection.style.display = "none";
 });
  //*event for Clear highScores button */
- clearScoresButton.addEventListener("click",function(){})
+ clearScoresButton.addEventListener("click",function(){
+  localStorage.removeItem("highScores");
+  updatedHighScores();
+ })
 
 
