@@ -219,3 +219,5 @@ const updatedHighScores = JSON.stringify(highScores);
 localStorage.setItem("highScores", updatedHighScores);
  updatedHighScores();//*hacer funcion/
  allDoneSection.style.display="none";
+ viewHighScoresSection.style.display="block";
+});
