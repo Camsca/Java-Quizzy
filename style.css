@@ -102,11 +102,10 @@ nav a[href="#view-high-scores"] {
     gap: 10px;
     text-align: left;
 }
-/* falta estilixar preguntas*/
 .option {
     background-color: #351c75;
     color: white;
-    padding: 20px;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -128,5 +127,41 @@ margin-left: 18%;
 font-size: 35px;
  }
 
+ #all-done,p,form,h2{
+     padding:10px;
+     display: flex;
+     justify-content: left;
+     padding-left: 20%;   
+ }
+  h2{
+    font-size: 25px;
+ }
+ #initials-form button[type="submit"]{    
+    background-color: #351c75;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left:4px;
+  }
 
+  #initials-form button[type="submit"]:hover {
+    background-color: #b54ae5;
+}
 
+#view-high-scores button{
+    background-color: #351c75;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left:4px;
+}
+
+#view-high-scores button:hover {
+    background-color: #b54ae5;
+}
