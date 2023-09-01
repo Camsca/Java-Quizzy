@@ -120,8 +120,13 @@ nav a[href="#view-high-scores"] {
     background-color: #b54ae5;
 }
 
-
-
+ #questions{
+display: flex;
+font-weight: bold;
+padding: 30px;
+margin-left: 18%;
+font-size: 35px;
+ }
 
 
 
