@@ -151,6 +151,10 @@ font-size: 35px;
     background-color: #b54ae5;
 }
 
+#view-high-scores h2,ul, button{
+    padding: 10px;
+}
+
 #view-high-scores button{
     background-color: #351c75;
     color: white;
@@ -164,4 +168,11 @@ font-size: 35px;
 
 #view-high-scores button:hover {
     background-color: #b54ae5;
+}
+
+#high-scores-list{
+    max-width: 20%;
+    border-radius: 3px;
+ background-color: #b27acb;
+    
 }
