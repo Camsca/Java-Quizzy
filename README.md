@@ -31,5 +31,6 @@ Welcome to the JavaScript Fundamentals Timed Quiz! This is a coding boot camp pr
 - HTML
 - CSS
 - JavaScript
-
+https://github.com/Camsca/Java-Quizzy
+https://camsca.github.io/Java-Quizzy/
 ![Quiz Screenshot](127.0.0.1_5500_homeworks_javaQuizzy_index.html%20(1).png)
